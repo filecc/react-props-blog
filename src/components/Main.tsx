@@ -13,8 +13,8 @@ export default function Main({ setIsfocused } : { setIsfocused: (value:boolean) 
       <section className={`flex gap-3 items-center flex-wrap ${postToShow && 'blur-lg'}`}>
           {posts.map((post) => {
             if(post.published) {
-              return <motion.div layoutId={post.title}>
-                <PostThumbnail setIsfocused={setIsfocused} setPost={setPostToShow} post={post} key={crypto.randomUUID()} />
+              return <motion.div key={crypto.randomUUID()} layoutId={post.title}>
+                <PostThumbnail setIsfocused={setIsfocused} setPost={setPostToShow} post={post}  />
                 </motion.div>
             }
           })}
