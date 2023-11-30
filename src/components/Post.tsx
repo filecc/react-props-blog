@@ -2,10 +2,15 @@ import { AnimatePresence, motion } from "framer-motion";
 import { PostType } from "../lib/data.types";
 
 export default function Post({ post } : { post: PostType}) {
+
   return (
     <>
     <AnimatePresence>
-      <section className="max-w-xl rounded-xl shadow-xl">
+      <motion.section 
+      initial={{ opacity: 0, scale: 0 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0}}
+      className="max-w-xl rounded-xl shadow-xl">
       
         <motion.img
         key={crypto.randomUUID()}
@@ -28,7 +33,7 @@ export default function Post({ post } : { post: PostType}) {
             Commenta
           </button>
         </article>
-      </section>
+      </motion.section>
       </AnimatePresence>
     </>
   );

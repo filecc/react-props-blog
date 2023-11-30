@@ -13,26 +13,23 @@ export default function Main({ setIsfocused } : { setIsfocused: (value:boolean) 
       <section className={`flex gap-3 items-center flex-wrap ${postToShow && 'blur-lg'}`}>
           {posts.map((post) => {
             if(post.published) {
-              return <PostThumbnail setIsfocused={setIsfocused} setPost={setPostToShow} post={post} key={crypto.randomUUID()} />
+              return <motion.div layoutId={post.title}>
+                <PostThumbnail setIsfocused={setIsfocused} setPost={setPostToShow} post={post} key={crypto.randomUUID()} />
+                </motion.div>
             }
           })}
       </section>
 
       <AnimatePresence>
-        {postToShow && <section className='absolute md:block p-6'>
-          <motion.div 
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-         exit={{ opacity: 0 }}
-        >
-        
-      <Post post={postToShow} />
-        </motion.div>
+        {postToShow && <motion.section layoutId={postToShow.title} className='absolute p-6'>
+          <div>
+            <Post post={postToShow} />
+          </div>
         <button className='mt-2 px-5 py-2 bg-indigo-400 rounded text-white font-bold' onClick={() => {
           setPostToShow(null)
           setIsfocused(false)
           }}>Chiudi</button>
-        </section> }
+        </motion.section> }
       </AnimatePresence>
      
      
