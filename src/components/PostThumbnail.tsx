@@ -12,7 +12,7 @@ export default function PostThumbnail({ post, setPost, setIsfocused } : { post: 
              <p className="mt-2 pb-3">{post.content.slice(0, 80) + '...'} <button onClick={()=>{
                 setPost(post)
                 setIsfocused(true)
-                }} className="text-xs text-sky-500 hover:text-sky-700 hover:font-bold transition-colors duration-300">READ MORE</button></p>
+                }} className="mt-4 text-xs border border-sky-200 px-2 rounded text-sky-500 transition-all duration-300 hover:bg-sky-100 hover:text-sky-600">READ MORE</button></p>
            </div>
         </div>
         </>
