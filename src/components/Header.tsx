@@ -1,7 +1,7 @@
-export default function Header() {
+export default function Header({ isFocused } : { isFocused: boolean}) {
   return (
     <>
-      <header className="py-4 text-center text-3xl font-bold">Il mio blog</header>
+      <header className={`py-4 text-center text-3xl font-bold ${isFocused && 'blur-lg'}`}>Il mio blog</header>
     </>
   );
 }
