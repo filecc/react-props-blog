@@ -9,7 +9,7 @@ export default function PostThumbnail({ post, setPost } : { post: PostType, setP
             </div>
            <div className="px-2 py-3">
              <h2 className="text-2xl font-semibold">{post.title}</h2>
-             <p>{post.content.slice(0, 25) + '...'} <button onClick={()=>setPost(post)} className="text-xs text-sky-500 hover:text-sky-700 transition-colors duration-300">READ MORE</button></p>
+             <p>{post.content.slice(0, 25) + '...'} <button onClick={()=>setPost(post)} className="text-xs text-sky-500 hover:text-sky-700 hover:font-bold transition-colors duration-300">READ MORE</button></p>
            </div>
             
         </div>
